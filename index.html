@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENAM — École Nationale des Arts et Métiers</title>
+    <link rel="icon" href="logo-enam.jpeg" type="image">
+    <!-- Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        enam: {
+                            blue: '#17184b',
+                            indigo: '#252467',
+                            burgundy: '#7e1b36',
+                            red: '#e12d2e',
+                            redHover: '#c82324',
+                            darkBg: '#0f1026'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .bg-header-gradient {
+            background: linear-gradient(90deg, #17184b 0%, #252467 50%, #7e1b36 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="bg-header-gradient text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo ak Non Lekòl la -->
+            <a href="index.html" class="flex items-center space-x-3 cursor-pointer">
+                <div class="w-11 h-11 rounded-full bg-white p-0.5 shadow-md flex items-center justify-center">
+                    <img src="logo-enam.jpeg" 
+                         onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3135/3135755.png'" 
+                         alt="Logo ENAM" class="w-full h-full object-contain rounded-full">
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-wide block leading-none text-white">L'ENAM</span>
+                    <span class="text-[10px] text-slate-300 font-normal tracking-tight">École Nationale des Arts et Métiers</span>
+                </div>
+            </a>
+
+            <!-- Meni Navigasyon Desktop -->
+            <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+                <a href="index.html" class="hover:text-red-300 transition-colors">Accueil</a>
+
+                <!-- Dropdown: L'École -->
+                <div class="relative group py-6">
+                    <button class="flex items-center space-x-1 hover:text-red-300 transition-colors focus:outline-none">
+                        <span>L'École</span>
+                        <svg class="w-4 h-4 text-slate-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 hidden group-hover:grid grid-cols-2 gap-8 bg-white text-slate-800 rounded-2xl shadow-2xl border border-slate-100 p-6 w-[540px] z-50 transition-all duration-200">
+                        <div>
+                            <h4 class="text-xs font-bold text-enam-red uppercase tracking-wider mb-3 pb-1 border-b border-slate-100">Présentation</h4>
+                            <ul class="space-y-2 text-xs text-slate-600">
+                                <li><a href="#histoire" class="hover:text-enam-blue font-medium block py-1">Histoire & Mission</a></li>
+                                <li><a href="#mot-direction" class="hover:text-enam-blue font-medium block py-1">Mot de la Direction</a></li>
+                                <!-- <li><a href="#admission" class="hover:text-enam-blue font-medium block py-1">Admission & Inscription</a></li> -->
+                                <li><a href="reglement.html" class="hover:text-enam-blue font-medium block py-1 font-bold text-enam-red">Règlement Intérieur</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-enam-red uppercase tracking-wider mb-3 pb-1 border-b border-slate-100">Accréditations & Réseau</h4>
+                            <ul class="space-y-2 text-xs text-slate-600">
+                                <li><a href="#certifications" class="hover:text-enam-blue font-medium block py-1">Certifications & Diplômes</a></li>
+                                <li><a href="#footer" class="hover:text-enam-blue font-medium block py-1">Localisation & Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dropdown: Étudiant -->
+                <div class="relative group py-6">
+                    <button class="flex items-center space-x-1 hover:text-red-300 transition-colors focus:outline-none">
+                        <span>Étudiant</span>
+                        <svg class="w-4 h-4 text-slate-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 hidden group-hover:block bg-white text-slate-800 rounded-2xl shadow-2xl border border-slate-100 p-6 w-[280px] z-50 transition-all duration-200">
+                        <h4 class="text-xs font-bold text-enam-red uppercase tracking-wider mb-3 pb-1 border-b border-slate-100">Vie Académique</h4>
+                        <ul class="space-y-2 text-xs text-slate-600">
+                            <li><a href="#scolarite" class="hover:text-enam-blue font-medium block py-1">Scolarité & Paiements</a></li>
+                            <!-- <li><a href="#annonces" class="hover:text-enam-blue font-medium block py-1">Annonces Publiques</a></li> -->
+                            <!-- <li><a href="#espace-membre" class="hover:text-enam-blue font-medium block py-1">Connexion Espace Membre</a></li> -->
+                            <li><a href="reglement.html" class="hover:text-enam-blue font-medium block py-1 font-bold text-enam-red">Règlement Intérieur</a></li>
+                            <li><a href="#certifications" class="hover:text-enam-blue font-medium block py-1">Certifications & Diplômes</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Dropdown: Filières -->
+                <div class="relative group py-6">
+                    <button class="flex items-center space-x-1 hover:text-red-300 transition-colors focus:outline-none">
+                        <span>Filières</span>
+                        <svg class="w-4 h-4 text-slate-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 hidden group-hover:block bg-white text-slate-800 rounded-2xl shadow-2xl border border-slate-100 p-6 w-[280px] z-50 transition-all duration-200">
+                        <h4 class="text-xs font-bold text-enam-red uppercase tracking-wider mb-3 pb-1 border-b border-slate-100">Programme Disponible</h4>
+                        <ul class="space-y-2 text-xs text-slate-600">
+                            <li><a href="#filieres" class="hover:text-enam-blue font-medium block py-1">Technique Réseaux Informatiques</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <a href="#histoire" class="hover:text-red-300 transition-colors">À propos</a>
+                <a href="#footer" class="hover:text-red-300 transition-colors">Contact</a>
+            </nav>
+
+            <!-- Bouton Hamburger pou Mobil -->
+            <button id="hamburger-btn" onclick="toggleMobileMenu()" class="lg:hidden flex items-center justify-center p-2 rounded-xl bg-white/10 hover:bg-white/20 focus:outline-none">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Meni Mobil Hamburger (Koulye a ak tout Seksyon yo genyen) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-enam-darkBg border-t border-slate-800 px-6 py-4 space-y-4 text-sm font-medium max-h-[85vh] overflow-y-auto">
+            <a href="index.html" onclick="toggleMobileMenu()" class="block text-white hover:text-red-400">Accueil</a>
+            
+            <!-- L'École -->
+            <div class="border-t border-slate-800 pt-3">
+                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider block mb-2">L'École - Présentation</span>
+                <div class="pl-3 space-y-2 text-xs">
+                    <a href="#histoire" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-white">Histoire & Mission</a>
+                    <a href="#admission" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-white">Admission & Inscription</a>
+                    <a href="reglement.html" class="block text-enam-red font-bold hover:text-white">Règlement Intérieur</a>
+                </div>
+            </div>
+
+            <!-- Accréditations & Réseau (Mete nan meni mobil) -->
+            <div class="border-t border-slate-800 pt-3">
+                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider block mb-2">Accréditations & Réseau</span>
+                <div class="pl-3 space-y-2 text-xs">
+                    <a href="#certifications" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-white">Certifications & Diplômes</a>
+                    <a href="#footer" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-white">Localisation & Contact</a>
+                </div>
+            </div>
+
+            <!-- Étudiant -->
+            <div class="border-t border-slate-800 pt-3">
+                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider block mb-2">Étudiant - Vie Académique</span>
+                <div class="pl-3 space-y-2 text-xs">
+                    <a href="#scolarite" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-white">Scolarité & Paiements</a>
+                    <a href="#annonces" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-white">Annonces Publiques</a>
+                    <a href="#espace-membre" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-white">Connexion Espace Membre</a>
+                </div>
+            </div>
+
+            <!-- Filières -->
+            <div class="border-t border-slate-800 pt-3">
+                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider block mb-2">Filières</span>
+                <div class="pl-3 space-y-2 text-xs">
+                    <a href="#filieres" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-white">Technique Réseaux Informatiques</a>
+                </div>
+            </div>
+
+            <a href="#footer" onclick="toggleMobileMenu()" class="block text-white border-t border-slate-800 pt-3">Contact</a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+        
+        <!-- CARROUSEL SLIDER -->
+        <section class="py-8 bg-slate-100">
+            <div class="max-w-6xl mx-auto px-4 text-center">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-3">
+                    Formation Technique & Professionnelle d'Excellence
+                </h1>
+                <p class="text-xs sm:text-sm text-slate-600 max-w-3xl mx-auto mb-8">
+                    Préparez votre avenir avec l'École Nationale des Arts et Métiers (ENAM) — 90 ans de passion et d'innovation au service de la jeunesse haïtienne.
+                </p>
+
+                <div class="relative max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl bg-slate-900 h-[380px] sm:h-[480px] border border-slate-800">
+                    <div class="slide-item absolute inset-0 transition-opacity duration-700 opacity-100 flex flex-col justify-end p-6 sm:p-12 text-left">
+                        <img src="laptop.jpeg" alt="Ateliers ENAM" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                        <div class="relative z-10">
+                            <span class="px-3 py-1 bg-enam-red text-white text-[10px] font-bold uppercase rounded-full tracking-wider mb-2 inline-block">Ateliers CISCO</span>
+                            <h3 class="text-xl sm:text-3xl font-bold text-white">Des équipements modernes pour une formation pratique avancée.</h3>
+                        </div>
+                    </div>
+
+                    <div class="slide-item absolute inset-0 transition-opacity duration-700 opacity-0 pointer-events-none flex flex-col justify-end p-6 sm:p-12 text-left">
+                        <img src="Chretiens.jpeg" alt="Campus ENAM" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                        <div class="relative z-10">
+                            <span class="px-3 py-1 bg-blue-600 text-white text-[10px] font-bold uppercase rounded-full tracking-wider mb-2 inline-block">Campus & Vie Étudiante</span>
+                            <h3 class="text-xl sm:text-3xl font-bold text-white">90 ans de tradition salésienne au service de la jeunesse haïtienne.</h3>
+                        </div>
+                    </div>
+
+                    <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/50 hover:bg-slate-900 z-20 flex items-center justify-center text-white border border-white/20">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/50 hover:bg-slate-900 z-20 flex items-center justify-center text-white border border-white/20">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSYON GALERIE PHOTOS (EXACTEMENT 8 FOTO) -->
+        <section id="galerie" class="py-16 bg-white border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="text-xs font-bold text-enam-red uppercase tracking-widest block mb-1">DÉCOUVRIR EN IMAGES</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Galerie Photos de l'Établissement</h2>
+                    <div class="w-16 h-1 bg-enam-red mx-auto mt-3 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div class="group relative rounded-2xl overflow-hidden shadow-md bg-slate-100 border border-slate-200 aspect-square">
+                        <img src="campus ENAM.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+                            <span class="text-white text-xs font-bold"> Bâtiments de l'ENAM</span>
+                        </div>
+                    </div>
+                    <div class="group relative rounded-2xl overflow-hidden shadow-md bg-slate-100 border border-slate-200 aspect-square">
+                        <img src="Don Bosco.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+                            <span class="text-white text-xs font-bold">Travaux Pratiques</span>
+                        </div>
+                    </div>
+                    <div class="group relative rounded-2xl overflow-hidden shadow-md bg-slate-100 border border-slate-200 aspect-square">
+                        <img src="1 SALESIENS.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+                            <span class="text-white text-xs font-bold">Nos Premiers Salésiens</span>
+                        </div>
+                    </div>
+                    <div class="group relative rounded-2xl overflow-hidden shadow-md bg-slate-100 border border-slate-200 aspect-square">
+                        <img src="Etudiant TRI.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+                            <span class="text-white text-xs font-bold">Étudiants</span>
+                        </div>
+                    </div>
+                    <div class="group relative rounded-2xl overflow-hidden shadow-md bg-slate-100 border border-slate-200 aspect-square">
+                        <img src="reseaux.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+                            <span class="text-white text-xs font-bold">Configuration Réseau</span>
+                        </div>
+                    </div>
+                    <div class="group relative rounded-2xl overflow-hidden shadow-md bg-slate-100 border border-slate-200 aspect-square">
+                        <img src="TRI Classe.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+                            <span class="text-white text-xs font-bold">Salles de Cours</span>
+                        </div>
+                    </div>
+                    <div class="group relative rounded-2xl overflow-hidden shadow-md bg-slate-100 border border-slate-200 aspect-square">
+                        <img src="mecanique.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+                            <span class="text-white text-xs font-bold">Ateliers Mécanique</span>
+                        </div>
+                    </div>
+                    <div class="group relative rounded-2xl overflow-hidden shadow-md bg-slate-100 border border-slate-200 aspect-square">
+                        <img src="Morning speech.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+                            <span class="text-white text-xs font-bold">Mots du Matin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSYON SCOLARITÉ & YON SÈL KONT BANCAIRE -->
+        <section id="scolarite" class="py-16 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <span class="text-xs font-bold text-enam-red uppercase tracking-widest block mb-1">INFORMATIONS FINANCIÈRES</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Scolarité & Compte Bancaire</h2>
+                    <div class="w-16 h-1 bg-enam-red mx-auto mt-3 rounded-full"></div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-md p-6 sm:p-8 relative overflow-hidden mb-8">
+                    <div class="w-3 h-full bg-enam-red absolute left-0 top-0"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 pb-4 border-b border-slate-100">
+                        <div>
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Banque Officielle</span>
+                            <span class="font-extrabold text-slate-900 text-2xl">BNC</span>
+                        </div>
+                        <span class="self-start sm:self-center text-xs font-bold bg-red-100 text-red-700 px-3 py-1.5 rounded-lg">Compte Institutionnel (Gourdes)</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700">
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+                            <span class="text-slate-400 font-medium block text-[11px]">Nom du Compte:</span>
+                            <strong class="text-slate-900 font-semibold">Congrégation des Salésiens communauté ENAM</strong>
+                        </div>
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+                            <span class="text-slate-400 font-medium block text-[11px]">Numéro de Compte:</span>
+                            <span class="font-mono text-base font-bold text-enam-red select-all">1540-0000-54</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-blue-50 border border-blue-200 rounded-2xl p-5 text-xs text-slate-700 flex items-start space-x-4">
+                    <div class="p-2 bg-blue-600 text-white rounded-lg flex-shrink-0">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-1">Consigne Importante:</h4>
+                        <p class="leading-relaxed">
+                            Après le versement bancaire, veuillez déposer le <strong>bordereau original</strong> au bureau de comptabilité de l'ENAM pour obtenir votre reçu officiel.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSYON CERTIFICATIONS & DIPLÔMES (REMETE SOU PAJ AKEY LA) -->
+        <section id="certifications" class="py-16 bg-white border-t border-slate-200">
+            <div class="max-w-5xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <span class="text-xs font-bold text-enam-red uppercase tracking-widest block mb-1">ACCREDITATIONS ET TITRES</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Certifications & Diplômes</h2>
+                    <div class="w-16 h-1 bg-enam-red mx-auto mt-3 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Diplôme d'État INFP -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm flex items-start space-x-4">
+                        <div class="p-3 bg-enam-blue text-white rounded-xl">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base mb-1">Diplôme Technique (DT) - INFP</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Diplôme d'État officiel remis sous la tutelle du Ministère de l'Éducation Nationale et de la Formation Professionnelle (INFP) après 3 années de formation intensive.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Certification CISCO Networking Academy -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm flex items-start space-x-4">
+                        <div class="p-3 bg-emerald-600 text-white rounded-xl">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base mb-1">Attestations & Badges CISCO</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Préparation aux certifications internationales CCNA (Cisco Certified Network Associate) grâce aux laboratoires pratiques installés sur le campus.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSYON: FILIÈRES -->
+        <section id="filieres" class="py-16 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="text-center mb-10">
+                    <span class="text-xs font-bold text-enam-red uppercase tracking-widest">OFFRE ACADÉMIQUE</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Programme Spécialisé</h2>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
+                    <div class="h-56 bg-slate-800 rounded-2xl overflow-hidden mb-6 relative">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=80" alt="Réseaux" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <span class="absolute bottom-4 left-4 z-10 text-xl font-bold text-white">Technique Réseaux Informatiques</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <span class="px-2.5 py-1 bg-red-100 text-enam-red text-[11px] font-bold rounded-lg">3 Ans / 2700 Heures</span>
+                            <span class="px-2.5 py-1 bg-blue-100 text-enam-blue text-[11px] font-bold rounded-lg">Diplôme Technique - (DT/INFP)</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Formation axée sur l'administration système, la sécurité des réseaux, le câblage et la configuration des équipements CISCO.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSYON: HISTOIRE & MISSION -->
+        <section id="histoire" class="py-16 bg-white border-t border-slate-200">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-1 gap-8 items-center bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8">
+                    <div class="space-y-3 text-xs sm:text-sm text-slate-600">
+                        <h2 class="text-2xl font-extrabold text-slate-900">Histoire & Mission</h2>
+                        <div class="w-12 h-1 bg-enam-red rounded-full"></div>
+                        <div class="rounded-2xl overflow-hidden h-48 border border-slate-200">
+                        <img src="Patron.jpeg" class="w-full h-85 object-cover">
+                    </div>
+                        <p class="text-justify">
+                            L’école Nationale des Arts et Métiers (ENAM) est un centre de formation technique et professionnelle fondée en <strong>1936</strong>, dirigée par <strong>les Salésiens de Don Bosco</strong> et dédiée au service des jeunes des deux sexes du pays. 
+                            Elle vise une formation intégrale basée sur la méthode APC (Approche Par Compétence), qui met en évidence le savoir, 
+                            le savoir-faire, le savoir être et le savoir travailler ensemble pour le développement durable du pays.
+                            Son objectif général concrétise l’aveu du saint patron des salésiens, qui est de former de <strong>bons chrétiens et d’honnêtes citoyens.</strong> 
+                            Cette formation est à la base de connaissances et d’habilités pour l’acquisition des attitudes et aptitudes orientées au bien commun, 
+                            aux développements de l’espace et dans le temps qu’on se trouve enclaver, afin de changer la réalité de l’homme et de son environnement.
+                            Fidèle à l’orientation de <strong>l’Institut National de Formation Professionnelle (INFP)</strong>, <strong>l’Ecole Nationale des Arts et Métiers (ENAM)</strong>,offre sur une période <strong>de trois (3) ans</strong> et dans un intervalle de <strong>deux mille sept cent (2700) heures</strong>, 
+                            une formation donnant droit à un <strong>diplôme technique (DT)</strong>, pour augmenter le nombre de techniciens et de techniciennes diplômés et compétents, 
+                            afin d’investir le marché du travail et de coopérer à la construction et au développement du pays.
+                            Etant une institution catholique au service de la nation Haïtienne, nous sommes portés dans un esprit de famille à créer une ambiance favorable au respect, à la convivialité, à la liberté, au partage. Et, cet esprit de famille facilite le succès de chaque étudiant,
+                             la qualité de l’enseignement et l’apprentissage pour le devenir et l’être d’un vrai technicien professionnel qui boucle ses études à l’Ecole Nationale des Arts et Métiers, dirigées par les salésiens de Don Bosco d’Haïti.
+                              De plus, elle coopère avec la société haïtienne au développement intégral des personnes à la base du message et des valeurs évangéliques  à travers son action éducative :
+                              <ul>
+                                <li>Promet la formation intégrale des étudiants et étudiantes dans une conception chrétienne de la personne, de la vie et du monde;</li>
+                                <li>Propose une synthèse entre foi, culture et vie;</li>
+                                <li>Confère une instruction religieuse avec des programmes académiques adéquats dans son contenu et dans sa qualité;</li>
+                                <li>Collabore avec d’autres forces sociales qui sont engagées dans la construction de la société.</li>
+                              </ul>	
+                            De tout cela, elle essaie de réussir ses finalités avec l’esprit, la méthode et l’expérience éducative de Don Bosco, qui se caractérise par : le critère préventif anime les destinataires à surmonter les risques et les situations de danger, à capter le sens de la jeunesse et à vivre en plénitude leurs aspirations.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER AK KREDI PORTFOLIO -->
+    <footer id="footer" class="bg-enam-darkBg text-slate-400 py-12 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+                <div class="flex items-center space-x-2 mb-3">
+                    <img src="logo-enam.jpeg" 
+                         onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3135/3135755.png'" class="w-8 h-8 object-contain">
+                    <span class="font-bold text-white text-sm">ENAM</span>
+                </div>
+                <p class="text-[11px] text-slate-400 leading-relaxed">
+                    École Nationale des Arts et Métiers (ENAM)
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white mb-3">Accès Rapide</h4>
+                <ul class="space-y-1.5 text-[11px]">
+                    <li><a href="index.html" class="hover:text-white">Accueil</a></li>
+                    <li><a href="#galerie" class="hover:text-white">Galerie Photos</a></li>
+                    <li><a href="#scolarite" class="hover:text-white">Scolarité & Banque</a></li>
+                    <li><a href="reglement.html" class="hover:text-white text-enam-red font-bold">Règlement Intérieur</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white mb-3">Contact</h4>
+                <p class="text-[11px] text-slate-400 leading-relaxed">
+                    14, Blvd Jean-Jacques Dessalines, Port-au-Prince, Haïti<br>
+                    Téléphone: +509 3600-0000<br>
+                    Email: direct.enamsdb@gmail.com
+                </p>
+            </div>
+        </div>
+
+        <div class="border-t border-slate-800/80 pt-6 text-center text-[11px] text-slate-500">
+            <p>© 2026 ENAM - Tous droits réservés.</p>
+            <p class="mt-1 font-medium text-slate-400">
+                Réalisé par <a href=#Jonathan class="text-enam-red hover:underline font-bold transition-colors">Ernst Jonathan PAUL</a>
+            </p>
+        </div>
+    </footer>
+    <!-- BOUTON SCROLL (MOUNTE ANWO / DESANN ANBA) -->
+        <div class="fixed bottom-6 right-6 flex flex-col space-y-2 z-50">
+            <!-- Bouton pou moute anwo nèt -->
+            <button onclick="scrollToTop()" title="Moute anwo nèt" class="w-11 h-11 bg-enam-blue hover:bg-enam-indigo text-white rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 border border-white/20 focus:outline-none">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path>
+                </svg>
+            </button>
+
+            <!-- Bouton pou desann anba nèt -->
+            <button onclick="scrollToBottom()" title="Desann anba nèt" class="w-11 h-11 bg-enam-red hover:bg-enam-redHover text-white rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 border border-white/20 focus:outline-none">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+        </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide-item');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.remove('opacity-0', 'pointer-events-none');
+                    slide.classList.add('opacity-100');
+                } else {
+                    slide.classList.remove('opacity-100');
+                    slide.classList.add('opacity-0', 'pointer-events-none');
+                }
+            });
+            currentSlideIndex = index;
+        }
+
+        function nextSlide() { showSlide((currentSlideIndex + 1) % totalSlides); }
+        function prevSlide() { showSlide((currentSlideIndex - 1 + totalSlides) % totalSlides); }
+
+        setInterval(nextSlide, 4000);
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        // Fonksyon pou moute anwo nèt
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Fonksyon pou desann anba nèt
+        function scrollToBottom() {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
