@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription en Ligne — ENAM</title>
+    <link rel="icon" href="logo-enam.jpeg" type="image">
+    <!-- Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] },
+                    colors: {
+                        enam: {
+                            blue: '#17184b',
+                            indigo: '#252467',
+                            burgundy: '#7e1b36',
+                            red: '#e12d2e',
+                            redHover: '#c82324',
+                            darkBg: '#0f1026'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .bg-header-gradient { background: linear-gradient(90deg, #17184b 0%, #252467 50%, #7e1b36 100%); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER ENAM -->
+    <header class="bg-header-gradient text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3 cursor-pointer">
+                <div class="w-11 h-11 rounded-full bg-white p-0.5 shadow-md flex items-center justify-center">
+                    <img src="logo-enam.jpeg" alt="Logo ENAM"
+                         onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3135/3135755.png'" class="w-full h-full object-contain rounded-full">
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-wide block leading-none text-white">L'ENAM</span>
+                    <span class="text-[10px] text-slate-300 font-normal">École Nationale des Arts et Métiers</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+                <a href="index.html" class="hover:text-red-300 transition-colors">Accueil</a>
+                <a href="reglement.html" class="hover:text-red-300 transition-colors">Règlement Intérieur</a>
+                <a href="inscription.html" class="bg-enam-red px-4 py-2 rounded-xl font-bold text-white shadow-md">S'inscrire</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow py-10 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full">
+        
+        <div class="mb-8 text-center">
+            <a href="index.html" class="inline-flex items-center text-xs text-slate-500 hover:text-enam-red mb-3">
+                ← Retour à l'accueil
+            </a>
+            <h1 class="text-3xl font-extrabold text-slate-900">Formulaire d'Inscription</h1>
+            <p class="text-xs text-slate-600 mt-2">Remplissez le formulaire ci-dessous pour soumettre votre dossier d'admission.</p>
+            <div class="w-20 h-1 bg-enam-red mx-auto mt-3 rounded-full"></div>
+        </div>
+
+        <form action="https://formsubmit.co/direct.enamsdb@gmail.com" method="POST" enctype="multipart/form-data" class="space-y-8">
+            
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Nouvelle Inscription ENAM en Ligne">
+
+            <!-- SEKSYON 1: IDENTITÉ -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm space-y-4">
+                <div class="flex items-center space-x-3 border-b border-slate-100 pb-3">
+                    <span class="w-7 h-7 bg-enam-blue text-white rounded-full flex items-center justify-center font-bold text-xs">1</span>
+                    <h2 class="text-base font-bold text-slate-900">Identité de l'étudiant</h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Nom *</label>
+                        <input type="text" name="Nom" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:bg-white focus:ring-2 focus:ring-enam-blue focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Prénom *</label>
+                        <input type="text" name="Prenom" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:bg-white focus:ring-2 focus:ring-enam-blue focus:outline-none">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Sexe *</label>
+                        <select name="Sexe" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:bg-white focus:ring-2 focus:ring-enam-blue focus:outline-none">
+                            <option value="">Sélectionner...</option>
+                            <option value="Masculin">Masculin</option>
+                            <option value="Féminin">Féminin</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Date de Naissance *</label>
+                        <input type="date" name="Date_Naissance" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:bg-white focus:ring-2 focus:ring-enam-blue focus:outline-none">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Téléphone *</label>
+                        <input type="tel" name="Telephone" placeholder="+509 XXXX-XXXX" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:bg-white focus:ring-2 focus:ring-enam-blue focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Adresse Email *</label>
+                        <input type="email" name="Email" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:bg-white focus:ring-2 focus:ring-enam-blue focus:outline-none">
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEKSYON 2: PARCOURS & PIÈCES -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm space-y-4">
+                <div class="flex items-center space-x-3 border-b border-slate-100 pb-3">
+                    <span class="w-7 h-7 bg-enam-blue text-white rounded-full flex items-center justify-center font-bold text-xs">2</span>
+                    <h2 class="text-base font-bold text-slate-900">Votre Parcours & Pièces à joindre</h2>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Filière *</label>
+                    <select name="Filiere" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:bg-white focus:ring-2 focus:ring-enam-blue focus:outline-none">
+                        <option value="Technique Réseaux Informatiques (3 ans, 2700 h)">Technique Réseaux Informatiques (3 ans, 2700 h)</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Dernière école fréquentée *</label>
+                        <input type="text" name="Derniere_Ecole" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:bg-white focus:ring-2 focus:ring-enam-blue focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Dernier niveau réussi *</label>
+                        <select name="Dernier_Niveau" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:bg-white focus:ring-2 focus:ring-enam-blue focus:outline-none">
+                            <option value="Classe de 3e année secondaire (Rhéto)">Classe de 3e année secondaire (Rhéto)</option>
+                            <option value="Classe de 4e année secondaire (Philo/NS4)">Classe de 4e année secondaire (Philo/NS4)</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Pièces à joindre -->
+                <div class="pt-2">
+                    <label class="block text-xs font-semibold text-slate-700 mb-3">Pièces à joindre (Photos ou PDF, 5 Mo max)</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        
+                        <label class="border-2 border-dashed border-slate-200 hover:border-enam-blue rounded-xl p-4 text-center cursor-pointer transition-colors bg-slate-50 flex flex-col items-center justify-center space-y-1">
+                            <span class="text-xs font-medium text-slate-700" id="txt-acte">Acte de naissance</span>
+                            <span class="text-[10px] text-slate-400">Touchez pour ajouter</span>
+                            <input type="file" name="Acte_Naissance" accept="image/*,.pdf" class="hidden" onchange="fileSelected(this, 'txt-acte', 'Acte de naissance')">
+                        </label>
+
+                        <label class="border-2 border-dashed border-slate-200 hover:border-enam-blue rounded-xl p-4 text-center cursor-pointer transition-colors bg-slate-50 flex flex-col items-center justify-center space-y-1">
+                            <span class="text-xs font-medium text-slate-700" id="txt-bulletin">Bulletin ou relevé</span>
+                            <span class="text-[10px] text-slate-400">Touchez pour ajouter</span>
+                            <input type="file" name="Bulletin_Notes" accept="image/*,.pdf" class="hidden" onchange="fileSelected(this, 'txt-bulletin', 'Bulletin ou relevé')">
+                        </label>
+
+                        <label class="border-2 border-dashed border-slate-200 hover:border-enam-blue rounded-xl p-4 text-center cursor-pointer transition-colors bg-slate-50 flex flex-col items-center justify-center space-y-1">
+                            <span class="text-xs font-medium text-slate-700" id="txt-photo">Photo d'identité</span>
+                            <span class="text-[10px] text-slate-400">Touchez pour ajouter</span>
+                            <input type="file" name="Photo_Identite" accept="image/*" class="hidden" onchange="fileSelected(this, 'txt-photo', 'Photo d\'identité')">
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEKSYON 3: PAIEMENT BNC -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm space-y-4">
+                <div class="flex items-center space-x-3 border-b border-slate-100 pb-3">
+                    <span class="w-7 h-7 bg-enam-blue text-white rounded-full flex items-center justify-center font-bold text-xs">3</span>
+                    <h2 class="text-base font-bold text-slate-900">Paiement de la scolarité (BNC)</h2>
+                </div>
+
+                <!-- Bwat Enfòmasyon Kont BNC -->
+                <div class="bg-slate-100 border-l-4 border-enam-blue rounded-r-xl p-4 text-xs space-y-1">
+                    <p class="text-slate-500 font-medium">Banque BNC — compte en gourdes</p>
+                    <p class="text-lg font-extrabold text-enam-blue">1540-0000-54</p>
+                    <p class="text-slate-600">Congrégation des Salésiens communauté ENAM</p>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-2">Photo du bordereau de versement *</label>
+                    <label class="border-2 border-dashed border-slate-200 hover:border-enam-blue rounded-xl p-5 text-center cursor-pointer transition-colors bg-slate-50 flex flex-col items-center justify-center space-y-1">
+                        <span class="text-xs font-bold text-slate-700" id="txt-bordereau">Touchez pour ajouter le bordereau</span>
+                        <span class="text-[10px] text-slate-400">Gardez le bordereau original pour le reçu officiel</span>
+                        <input type="file" name="Photo_Bordereau" accept="image/*,.pdf" required class="hidden" onchange="fileSelected(this, 'txt-bordereau', 'Touchez pour ajouter le bordereau')">
+                    </label>
+                </div>
+            </div>
+
+            <!-- BOUTON SUBMIT -->
+            <div class="pt-2">
+                <button type="submit" class="w-full bg-enam-red hover:bg-enam-redHover text-white font-bold py-4 rounded-xl transition-all shadow-lg text-sm uppercase tracking-wider">
+                    Envoyer mon dossier d'inscription
+                </button>
+            </div>
+
+        </form>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-enam-darkBg text-slate-400 py-6 text-xs text-center border-t border-slate-800 mt-12">
+        <p>© 2026 ENAM - Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        function fileSelected(input, elementId, defaultText) {
+            const el = document.getElementById(elementId);
+            if (input.files && input.files[0]) {
+                el.innerText = "✅ " + input.files[0].name;
+                el.parentElement.classList.add("bg-emerald-50", "border-emerald-500");
+            } else {
+                el.innerText = defaultText;
+                el.parentElement.classList.remove("bg-emerald-50", "border-emerald-500");
+            }
+        }
+    </script>
+</body>
+</html>
